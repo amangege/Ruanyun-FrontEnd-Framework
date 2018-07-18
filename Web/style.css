@@ -14,7 +14,7 @@ section { width: 700px; height: 100vh; }
 
 .code-title { padding: 0 4px 0 40px; background-color: #2d2d2d; color: white; font-weight: 400; }
 .introduction { display: inline-block; border-left: 2px solid #377c9c; margin-top: 8px; padding: 0 4px; }
-pre { background-color: #ebebeb; border-left: 4px solid #377c9c; padding: 4px; }
+pre { background-color: #ebebeb; border-left: 4px solid #377c9c; padding: 4px; line-height: 1.4; font-family: consolas,monaco,"Andale Mono",monospace; }
 .moreDetails { background-color: #e0eef4; padding: 8px; border-left: 4px solid #377c9c; border-radius: 4px; }
 .moreDetails td { padding-right: 8px; }
 
