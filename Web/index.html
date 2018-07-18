@@ -12,6 +12,7 @@
                     <ul>
                         <li><a href="#sendAjax">sendAjax</a></li>
                         <li><a href="#basicMethod">basicMethod</a></li>
+                        <li><a href="#notify">basicMethod</a></li>
                     </ul>
             </sidebar>
             <section>
@@ -19,7 +20,7 @@
                     <h3>
                         <span class="code-title">sendAjax</span>
                     </h3>
-                    <p><span class='introduction'>此函数用来发送Ajax请求</span></p>
+                    <p><span class='introduction'>此函数用来发送Ajax请求:sendAjax(modelData, url, fn1, fn2, fn3, fn4)</span></p>
                     <h3>语法</h3>
                     <pre>
                     var modelData = {...};
@@ -77,22 +78,21 @@
                         </tr>
                     </table>
                 </article>
+                <hr>
                 <article id='#notify'>
                     <h3>
-                        <span class="code-title">basicMethod</span>
+                        <span class="code-title">notify</span>
                     </h3>
-                    <p><span class='introduction'>此函数用来收集viewModel对象的通用函数,包含哪些函数请在更多细节里查看</span></p>
+                    <p><span class='introduction'>自定义通知内容</span></p>
                     <h3>语法</h3>
                     <pre>
-                    uploadViewModel.prototype = new basicMethod(); 
-                    var viewModel = new uploadViewModel();
-                    ko.applyBindings(viewModel, document.getElementById('contain'));
+                    notify('自定义的通知内容', 'tip-tb-red')
+                    notify('自定义的通知内容', 'tip-tb-black');
                     </pre>
                     <h3>更多细节</h3>
                     <table class='moreDetails'>
                         <tr>
-                            <td>showImg(img, w, h)</td>
-                            <td>img是图片路径,w, h根据需求定义,一般是图片大小的3-5倍,设置这两个参数可以让图片更清晰</td>
+                            无
                         </tr>
                     </table>
                 </article>
