@@ -4,84 +4,6 @@
         <meta charset="UTF-8">
         <title>ruanyun-web</title>
         <link rel="stylesheet" href="./style.css">
-        <style>
-* {
-    margin: 0;
-    padding: 0;
-}
-            ul, ol {
-                list-style: none;
-                padding-left: 32px;
-            }
-
-            hr {
-                height: 0px;
-                border-bottom: 4px solid black;
-                    margin-top: 36px;
-                        margin-bottom: 36px;
-                            width: 600px;
-            }
-            sidebar li a{
-                font-weight: 400;
-                color: #3f87a6;
-                font-size: 18px;
-                text-decoration:none;
-            }
-            sidebar li a:hover {
-                text-decoration: underline;
-            }
-            h1, h2, h3, h4, h5 {
-                x-locale-heading-primary,zillaslab,Palatino,"Palatino Linotype",x-locale-heading-secondary,serif;
-            }
-            h2 {
-                margin: 16px;
-            }
-
-            main {
-                display: flex;
-
-            }
-            sidebar {
-                width: 200px;
-                height: 100vh;
-            }
-            section {
-                width: 700px;
-                height: 100vh;
-            }
-            .code-title {
-                padding: 0 4px 0 40px;
-                background-color: #2d2d2d;
-                color: white;
-                font-weight: 400;
-            }
-            .introduction {
-                display: inline-block;
-                border-left: 2px solid #377c9c;
-                    margin-top: 8px;
-                padding: 0 4px;
-
-            }
-            h3 {
-               margin: 12px 0px 16px; 
-            }
-            pre {
-                background-color: #ebebeb;
-                border-left: 4px solid #377c9c;
-                padding: 4px;
-
-            }
-            .moreDetails {
-                background-color: #e0eef4;
-                    padding: 8px;
-                        border-left: 4px solid #377c9c;
-                            border-radius: 4px;
-            }
-            .moreDetails td {
-                
-                padding-right: 8px;
-            }
-        </style>
     </head>
     <body>
         <main>
@@ -137,6 +59,25 @@
                 </article>
                 <hr>
                 <article id='#basicMethod'>
+                    <h3>
+                        <span class="code-title">basicMethod</span>
+                    </h3>
+                    <p><span class='introduction'>此函数用来收集viewModel对象的通用函数,包含哪些函数请在更多细节里查看</span></p>
+                    <h3>语法</h3>
+                    <pre>
+                    uploadViewModel.prototype = new basicMethod(); 
+                    var viewModel = new uploadViewModel();
+                    ko.applyBindings(viewModel, document.getElementById('contain'));
+                    </pre>
+                    <h3>更多细节</h3>
+                    <table class='moreDetails'>
+                        <tr>
+                            <td>showImg(img, w, h)</td>
+                            <td>img是图片路径,w, h根据需求定义,一般是图片大小的3-5倍,设置这两个参数可以让图片更清晰</td>
+                        </tr>
+                    </table>
+                </article>
+                <article id='#notify'>
                     <h3>
                         <span class="code-title">basicMethod</span>
                     </h3>
