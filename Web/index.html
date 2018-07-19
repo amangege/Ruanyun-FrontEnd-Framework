@@ -29,7 +29,7 @@
     var f1 = function(res) {
         console.log(res);
     };
-    sendAjax(modelData, url, f1);
+    $.sendAjax(modelData, url, f1);
                     </pre>
                     <h3>更多细节</h3>
                     <table class='moreDetails'>
@@ -67,7 +67,7 @@
                     <p><span class='introduction'>此函数用来收集viewModel对象的通用函数,包含哪些函数请在<em>更多细节</em>里查看</span></p>
                     <h3>用例</h3>
                     <pre>
-    uploadViewModel.prototype = new basicMethod(); 
+    uploadViewModel.prototype = $.basicMethod(); 
     var viewModel = new uploadViewModel();
     ko.applyBindings(viewModel, document.getElementById('contain'));
 
