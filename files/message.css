@@ -1,0 +1,202 @@
+* {
+    margin: 0;
+    padding: 0;
+ }
+ ul {
+    list-style: none;
+ }
+ .clearfix::after {
+    content: '';
+    display: block;
+    clear: both;
+ }
+
+ .container {
+    background-color: #ecebeb;
+    position: relative;
+ } 
+
+ .pageHeader-wrapper {
+    width: 100%;
+    box-shadow: 0px 2px 4px #abb; 
+    background-color: white;
+ }
+.pageHeader {
+    width: 1200px;
+    margin: 0 auto;
+    padding-top: 30px;
+    padding-bottom: 30px;
+}
+.pageHeader .index {
+    color: #afafaf;
+    font-size: 14px;
+    margin-bottom: 40px;
+}
+.pageHeader .inbox {
+    color: #333;
+    font-size: 16px;
+    margin-bottom: 20px;
+}
+.pageHeader .inbox .number {
+    color: #a3cc83;
+}
+.pageHeader .controllers button{
+   font-size: 16px;
+   color: #333;
+   background-color: #eee;
+   border-radius: 2px;
+   margin-right: 30px;
+   padding: 4px 16px;
+}
+
+.main {
+    width: 1200px;
+    margin: 0 auto;
+    padding-bottom: 40px;
+}
+.main .item {
+    background-color: white;
+    margin-top: 20px; 
+    width: 1200px;
+    box-shadow: 0px 2px 4px #abb; 
+    padding: 30px;
+}
+.main .message-title {
+    height: 60px;
+}
+
+.main .left-title {
+    float: left;
+}
+.main .left-title span {
+    display: inline-block;
+}
+.main .left-title .circle {
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background-size: cover;
+    border: 1px solid red;
+}
+.main .left-title .interval {
+    margin-left: 20px;
+    margin-right: 20px;
+    width: 1px;
+    height: 24px;
+    background-color: #e5e5e5;
+}
+.main .left-title .email {
+    width: 24px;
+    height: 24px;
+    border: 1px solid red;
+    margin-right: 12px;
+}
+.main .left-title .name {
+    font-size: 16px;
+    margin-right: 40px;
+    margin-left: 12px;
+    position: relative;
+    top: -6px;
+    color: #666;
+}
+.main .left-title .status {
+    border: 1px solid #a3cc83;
+    position: relative;
+    top: -7px;
+    color: #a3cc83;
+    font-size: 14px;
+    padding: 2px 12px;
+}
+
+.main .right-title {
+    position: relative;
+    top: 4px;
+    float: right;
+    color: #999;
+    font-size: 12px;
+}
+
+.main .message-introduce {
+    margin-left: 210px;
+    margin-bottom: 20px;
+}
+
+.main .message-content{
+    margin-left: 210px;
+    height: 80px;
+    width: 380px;
+    background-color: #eee;
+    border-radius: 4px;
+}
+.main .message-content .img {
+    width: 80px;
+    height: 80px;
+    border: 1px solid red;
+    float: left;
+}
+.main .message-content .information {
+   float: left; 
+   position: relative;
+   height: 80px;
+} 
+.main .message-content .information h4{
+    font-size: 18px;
+    font-weight: 500;
+    margin-left: 16px;
+    margin-top: 12px;
+}
+.main .message-content .information p {
+    position: absolute;
+    font-size: 12px;
+    bottom: 12px;
+    left: 16px;
+}
+.mask {
+    position: absolute;
+    z-index: 1;
+    top: 0; 
+    left: 0;
+    right: 0;
+    bottom: 0;
+    width: 100%; 
+    height: 100%;
+    background-color: rgba(0 ,0, 0, 0.4);
+    position: none;
+}
+.mask .dialog { 
+    width: 480px;
+    height: 235px;
+    background-color: white;
+    border-radius: 4px;
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    margin:  200px auto;
+    border-radius: 4px;
+}
+.mask.active {
+    display: block;    
+}
+.mask .dialog p {
+    text-align: center;
+    margin-top: 80px;
+    color: #333;
+    font-size: 18px;
+}
+.mask .dialog div {
+    margin: 60px auto 40px auto;
+    width: 240px; 
+    font-size: 18px; 
+}
+.mask .dialog div span:first-child {
+    float: left;
+    color: #999;
+}
+.mask .dialog div span:last-child {
+    float: right;
+    color: #333;
+}
+
+
