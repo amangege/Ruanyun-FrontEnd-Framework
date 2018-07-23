@@ -14,6 +14,7 @@
                         <li><a href="#sendAjax">sendAjax</a></li>
                         <li><a href="#basicMethod">basicMethod</a></li>
                         <li><a href="#notify">notify</a></li>
+                        <li><a href="#showTime">showTime </a></li>
                     </ul>
             </sidebar>
             <section>
@@ -99,6 +100,33 @@
                         </tr>
                     </table>
                 </article>
+                <hr>
+                <article id='showTime'>
+                    <h3>
+                        <span class="code-title">showTime</span>
+                    </h3>
+                    <p><span class='introduction'>展示时间</span></p>
+                    <h3>用例</h3>
+                    <pre>
+    在html的绑定中: data-bind="text: $root.showTime(time, 'Y-m-d H:i:s')"
+                    </pre>
+                    <h3>更多细节</h3>
+                    <table class='moreDetails'>
+                        <tr>
+                           <td>第一个参数</td>
+                           <td>一般为timestamp格式的时间</td>
+                        </tr>
+                        <tr>
+                           <td>第二个参数</td>
+                           <td>可设置为 Y-m-d(不传参数默认为这个值)/Y-m-d H:i:s</td>
+                        </tr>
+                        <tr>
+                            <td>注意</td>
+                            <td>如果传第二个参数,data-bind请用""包裹, 第二个参数用''包裹</td>
+                        </tr>
+                    </table>
+                </article>
+
             </section>  
         </main>  
     </body>
