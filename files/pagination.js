@@ -1,15 +1,29 @@
-var total = 30;
-var maxLength = 9;
-var current = 1;
+var total = 30  // 总数
+var maxLength = 9 // 展示几个数字
+var current = 1  // 标记目前点击
+
 var array = []
 for (var i = 0; i < total+1; i++) {
-    array[i] = i;
+    array[i] = i
 }
 
+init()
 
-generatorSpan(current)
 
-function prevClick() {
+
+
+
+
+//  helper function
+function init() {
+    generatorSpan(current)
+    bindEvent()
+}
+function bindEvent() {
+    $('#pagination').on('click', '.num span', function(e){
+        current = +e.currentTarget.innerHTML 
+        generatorSpan(current)
+    })
 
 }
 
@@ -17,13 +31,7 @@ function beActive(i) {
     $('.num span').eq(i).addClass('active')
 }
 
-$('#pagination').on('click', '.num span', function(e){
-    current = +e.currentTarget.innerHTML 
-    generatorSpan(current)
-})
-
 function generatorSpan(current) {
-    console.log(current)
     var spanList = [current]
     var left = current - 1
     var right = current + 1
