@@ -30,7 +30,11 @@
     var f1 = function(res) {
         console.log(res);
     };
-    $.sendAjax(modelData, url, f1);
+    $.sendAjax( {
+        modelData: modelData,
+        url: url,
+        f1: f1
+    });
                     </pre>
                     <h3>更多细节</h3>
                     <table class='moreDetails'>
@@ -47,15 +51,15 @@
                             <td>res.code === 1时执行</td>
                         </tr>
                         <tr>
-                            <td>fn2</td>
+                            <td>fn2000</td>
                             <td>res.code === 2000时执行</td>
                         </tr>
                         <tr>
-                            <td>fn3</td>
+                            <td>fn2003</td>
                             <td>res.code === 2003时执行</td>
                         </tr>
                         <tr>
-                            <td>fn3</td>
+                            <td>fnDefault</td>
                             <td>res.code返回了除上面以外的值时执行</td>
                         </tr>
                     </table>
@@ -135,6 +139,7 @@
                     <h3>用例</h3>
                     <pre>
                         请打开files文件下的pagination.html/css/js
+                        <a href="../files/pagination.html">预览</a>
                     </pre>
                     <h3>更多细节</h3>
                     <table class='moreDetails'>
