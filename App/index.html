@@ -2,7 +2,7 @@
 <html lang="en">
     <head>
         <meta charset="UTF-8">
-        <title>ruanyun-web</title>
+        <title>ruanyun-app</title>
         <link rel="stylesheet" href="./style.css">
     </head>
     <body>
@@ -13,9 +13,6 @@
                     <ul>
                         <li><a href="#sendAjax">sendAjax</a></li>
                         <li><a href="#basicMethod">basicMethod</a></li>
-                        <li><a href="#notify">notify</a></li>
-                        <li><a href="#showTime">showTime </a></li>
-                        <li><a href="#pagination">pagination</a></li>
                     </ul>
             </sidebar>
             <section>
@@ -23,19 +20,33 @@
                     <h3>
                         <span class="code-title">sendAjax</span>
                     </h3>
-                    <p><span class='introduction'>此函数用来发送Ajax请求:sendAjax(modelData, url, fn1, fn2, fn3, fn4)</span></p>
+                    <p><span class='introduction'>此函数用来发送Ajax请求:$.fn.sendAjax(obj);</span></p>
                     <h3>用例</h3>
                     <pre>
-    var modelData = {...};
-    var url = '/web/project/listpost'
-    var f1 = function(res) {
-        console.log(res);
-    };
-    $.sendAjax( {
-        modelData: modelData,
-        url: url,
-        f1: f1
-    });
+                        var obj = {};
+                        obj.modelData = {
+                            mobile: viewModel.mobile()
+                        };
+                        obj.url = '/app/userlogin/exist';
+                        obj.fn1 = function() {
+                            api.openWin({
+                                name: 'login1',
+                                url: 'widget://html/login1.html',
+                                pageParam: {
+                                    mobile: viewModel.mobile()
+                                }
+                            });
+                        };
+                        obj.fn2000 = function() {
+                            api.openWin({
+                                name: 'register1',
+                                url: 'widget://html/register1.html',
+                                pageParam: {
+                                    mobile: viewModel.mobile()
+                                }
+                            });
+                        }
+                        $.fn.sendAjax(obj);
                     </pre>
                     <h3>更多细节</h3>
                     <table class='moreDetails'>
@@ -56,11 +67,15 @@
                             <td>res.code === 2000时执行</td>
                         </tr>
                         <tr>
+                            <td>fn911</td>
+                            <td>res.code === 911时执行</td>
+                        </tr>
+                        <tr>
                             <td>fn2003</td>
                             <td>res.code === 2003时执行</td>
                         </tr>
                         <tr>
-                            <td>fnDefault</td>
+                            <td>fn0</td>
                             <td>res.code返回了除上面以外的值时执行</td>
                         </tr>
                     </table>
@@ -73,11 +88,11 @@
                     <p><span class='introduction'>此函数用来收集viewModel对象的通用函数,包含哪些函数请在<em>更多细节</em>里查看</span></p>
                     <h3>用例</h3>
                     <pre>
-    uploadViewModel.prototype = $.basicMethod(); 
-    var viewModel = new uploadViewModel();
-    ko.applyBindings(viewModel, document.getElementById('contain'));
+                        ViewModel.prototype = $.fn.basicMethod();
+                        var viewModel = new ViewModel();
+                        ko.applyBindings(viewModel);
 
-    console.log(viewModel.showImg());
+                        console.log(viewModel.showImg());
                     </pre>
                     <h3>更多细节</h3>
                     <table class='moreDetails'>
@@ -88,68 +103,6 @@
                     </table>
                 </article>
                 <hr>
-                <article id='notify'>
-                    <h3>
-                        <span class="code-title">notify</span>
-                    </h3>
-                    <p><span class='introduction'>自定义通知内容</span></p>
-                    <h3>用例</h3>
-                    <pre>
-    notify('自定义的通知内容', 'tip-tb-red')
-    notify('自定义的通知内容', 'tip-tb-black');
-                    </pre>
-                    <h3>更多细节</h3>
-                    <table class='moreDetails'>
-                        <tr>
-                            无
-                        </tr>
-                    </table>
-                </article>
-                <hr>
-                <article id='showTime'>
-                    <h3>
-                        <span class="code-title">showTime</span>
-                    </h3>
-                    <p><span class='introduction'>展示时间</span></p>
-                    <h3>用例</h3>
-                    <pre>
-    在html的绑定中: data-bind="text: $root.showTime(time, 'Y-m-d H:i:s')"
-                    </pre>
-                    <h3>更多细节</h3>
-                    <table class='moreDetails'>
-                        <tr>
-                           <td>第一个参数</td>
-                           <td>一般为timestamp格式的时间</td>
-                        </tr>
-                        <tr>
-                           <td>第二个参数</td>
-                           <td>可设置为 Y-m-d(不传参数默认为这个值)/Y-m-d H:i:s</td>
-                        </tr>
-                        <tr>
-                            <td>注意</td>
-                            <td>如果传第二个参数,data-bind请用""包裹, 第二个参数用''包裹</td>
-                        </tr>
-                        123
-                    </table>
-                </article>
-                <hr>
-                <article id='pagination'>
-                    <h3>
-                        <span class="code-title">pagination</span>
-                    </h3>
-                    <p><span class='introduction'>分   页模板</span></p>
-                    <h3>用例</h3>
-                    <pre>
-    <a href="../files/pagination.html">预览</a>
-                    </pre>
-                    <h3>更多细节</h3>
-                    <table class='moreDetails'>
-                        <tr>
-                请根据项目需求自行添加CSS样式
-                        </tr>
-                    </table>
-                </article>
-
 
             </section>  
         </main>  
