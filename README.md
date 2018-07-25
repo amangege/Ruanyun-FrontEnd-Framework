@@ -2,11 +2,11 @@
 
 ## 如何使用
 
-请联系我们
+联系我们
 
 ## App
 
-> <a href=" https://amangege.github.io/Ruanyun-FrontEnd-Framework/App/index.html">link</a>
+> <a href="https://amangege.github.io/Ruanyun-FrontEnd-Framework/App/index.html">Link</a>
 
 
 <hr> 
