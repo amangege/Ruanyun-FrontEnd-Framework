@@ -1,4 +1,156 @@
-<h1>App</h1>
-hi
-xxxx
-<main></main>
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <title>ruanyun-web</title>
+        <link rel="stylesheet" href="./style.css">
+    </head>
+    <body>
+        <main>
+            <sidebar>
+                <h1 class='companyTitle'>软云</h1>
+                <h2>目录</h2>
+                    <ul>
+                        <li><a href="#sendAjax">sendAjax</a></li>
+                        <li><a href="#basicMethod">basicMethod</a></li>
+                        <li><a href="#notify">notify</a></li>
+                        <li><a href="#showTime">showTime </a></li>
+                        <li><a href="#pagination">pagination</a></li>
+                    </ul>
+            </sidebar>
+            <section>
+                <article id='sendAjax'>
+                    <h3>
+                        <span class="code-title">sendAjax</span>
+                    </h3>
+                    <p><span class='introduction'>此函数用来发送Ajax请求:sendAjax(modelData, url, fn1, fn2, fn3, fn4)</span></p>
+                    <h3>用例</h3>
+                    <pre>
+    var modelData = {...};
+    var url = '/web/project/listpost'
+    var f1 = function(res) {
+        console.log(res);
+    };
+    $.sendAjax( {
+        modelData: modelData,
+        url: url,
+        f1: f1
+    });
+                    </pre>
+                    <h3>更多细节</h3>
+                    <table class='moreDetails'>
+                        <tr>
+                            <td>modelData</td>
+                            <td>要传的数据</td>
+                        </tr>
+                        <tr>
+                            <td>url</td>
+                            <td>请求的网址</td>
+                        </tr>
+                        <tr>
+                            <td>fn1</td>
+                            <td>res.code === 1时执行</td>
+                        </tr>
+                        <tr>
+                            <td>fn2000</td>
+                            <td>res.code === 2000时执行</td>
+                        </tr>
+                        <tr>
+                            <td>fn2003</td>
+                            <td>res.code === 2003时执行</td>
+                        </tr>
+                        <tr>
+                            <td>fnDefault</td>
+                            <td>res.code返回了除上面以外的值时执行</td>
+                        </tr>
+                    </table>
+                </article>
+                <hr>
+                <article id='basicMethod'>
+                    <h3>
+                        <span class="code-title">basicMethod</span>
+                    </h3>
+                    <p><span class='introduction'>此函数用来收集viewModel对象的通用函数,包含哪些函数请在<em>更多细节</em>里查看</span></p>
+                    <h3>用例</h3>
+                    <pre>
+    uploadViewModel.prototype = $.basicMethod(); 
+    var viewModel = new uploadViewModel();
+    ko.applyBindings(viewModel, document.getElementById('contain'));
+
+    console.log(viewModel.showImg());
+                    </pre>
+                    <h3>更多细节</h3>
+                    <table class='moreDetails'>
+                        <tr>
+                            <td>showImg(img, w, h)</td>
+                            <td>img是图片路径,w, h根据需求定义,一般是图片大小的3-5倍,设置这两个参数可以让图片更清晰</td>
+                        </tr>
+                    </table>
+                </article>
+                <hr>
+                <article id='notify'>
+                    <h3>
+                        <span class="code-title">notify</span>
+                    </h3>
+                    <p><span class='introduction'>自定义通知内容</span></p>
+                    <h3>用例</h3>
+                    <pre>
+    notify('自定义的通知内容', 'tip-tb-red')
+    notify('自定义的通知内容', 'tip-tb-black');
+                    </pre>
+                    <h3>更多细节</h3>
+                    <table class='moreDetails'>
+                        <tr>
+                            无
+                        </tr>
+                    </table>
+                </article>
+                <hr>
+                <article id='showTime'>
+                    <h3>
+                        <span class="code-title">showTime</span>
+                    </h3>
+                    <p><span class='introduction'>展示时间</span></p>
+                    <h3>用例</h3>
+                    <pre>
+    在html的绑定中: data-bind="text: $root.showTime(time, 'Y-m-d H:i:s')"
+                    </pre>
+                    <h3>更多细节</h3>
+                    <table class='moreDetails'>
+                        <tr>
+                           <td>第一个参数</td>
+                           <td>一般为timestamp格式的时间</td>
+                        </tr>
+                        <tr>
+                           <td>第二个参数</td>
+                           <td>可设置为 Y-m-d(不传参数默认为这个值)/Y-m-d H:i:s</td>
+                        </tr>
+                        <tr>
+                            <td>注意</td>
+                            <td>如果传第二个参数,data-bind请用""包裹, 第二个参数用''包裹</td>
+                        </tr>
+                    </table>
+                </article>
+                <hr>
+                <article id='pagination'>
+                    <h3>
+                        <span class="code-title">pagination</span>
+                    </h3>
+                    <p><span class='introduction'>分页模板</span></p>
+                    <h3>用例</h3>
+                    <pre>
+    <a href="../files/pagination.html">预览</a>
+                    </pre>
+                    <h3>更多细节</h3>
+                    <table class='moreDetails'>
+                        <tr>
+                请根据项目需求自行添加CSS样式
+                        </tr>
+                    </table>
+                </article>
+
+
+            </section>  
+        </main>  
+    </body>
+</html>
